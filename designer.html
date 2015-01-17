@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<script type="text/javascript" src="./libs/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="./libs/jquery-ui-1.10.3.custom.js"></script>
+		<link rel="stylesheet" type="text/css" href="./libs/jquery-ui-1.10.3.custom.min.css"/>
+		<style type="text/css">
+			.cccc{
+				border: 1px #f00 dashed;
+				height: 20px;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				$( "#sortable" ).sortable({
+				      revert: true,
+				      placeholder: "cccc"
+				    });
+				    $( "#draggable" ).draggable({
+				      connectToSortable: "#sortable",
+				      helper: "clone",
+				      addClasses: false,
+				      revert: "invalid"
+				    });
+				    $( "div" ).disableSelection();
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+		  <div id="draggable" class="ui-state-highlight">Drag me down</div>
+		</div>
+		 
+		<div id="sortable">
+		  <div class="">Item 1</div>
+		  <div class="">Item 2</div>
+		  <div class="">Item 3</div>
+		  <div class="">Item 4</div>
+		  <div class="">Item 5</div>
+		</div>
+	</body>
+<html>
