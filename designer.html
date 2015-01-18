@@ -37,11 +37,9 @@
 					placeholder: "placeholder"
 				});
 
-				$( ".item").draggable({
+				$( ".widgets").draggable({
 					connectToSortable: "#designer",
-				   	helper: function(){
-				   		return $("#widgets1").clone();
-				   	},
+				   	helper: "clone",
 				   	addClasses: false,
 				   	revert: "invalid"
 				});
@@ -52,9 +50,13 @@
 	</head>
 	<body>
 		<div id="toolbox">
-			<div class="item" id="n1"><div id="widgets1" class="widgets">文本12</div>AAA</div>
-			<div class="item">文本</div>
-			<div class="item" id="n2"><div id="widgets2" class="widgets">文本12dddd</div>AA</div>
+			<div class="widgets"><span>标签:<span><input/></div>
+			<div class="widgets"><span>标签:<span><select></select></div>
+			<div class="widgets"><span>标签:<span><input type="radio"/></div>
+			<div class="widgets"><span>标签:<span><input type="checkbox"/></div>
+			<div class="widgets"><span>标签:<span><input/></div>
+			<div class="widgets"><span>标签:<span><img/></div>
+			<div class="widgets"><span>标签:<span><input/></div>
 		</div>
 		<div id="designer"></div>
 	</body>
