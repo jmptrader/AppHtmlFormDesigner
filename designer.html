@@ -9,6 +9,14 @@
 				width: 100%;
 				height: 100%;
 			}
+
+			*{
+				margin: 0;
+				padding: 0;
+				font-size: 12px;
+				font-family: "微软雅黑";
+			}
+
 			.placeholder{
 				border: 1px #f00 dashed;
 				height: 60px;
@@ -16,18 +24,34 @@
 
 			#toolbox {
 				width: 300px;
-				height:400px;
+				height: 100%;
 				float: left;
 			}
 
-			#designer {
-				margin-left: 301px;
-				height:400px;
-				border: 1px solid red;
+			#toolbox #toolbox-title{
+				font-size: 16px;
+				font-weight: bold;
 			}
 
-			.widgets{
+			#toolbox .widgets{
 				cursor: pointer;
+				padding: 4px;
+				margin: 2px;
+				border: 1px dashed #ccc;
+				vertical-align: top;
+			}
+
+			#designer {
+				margin-left: 302px;
+				height: 98%;
+				border: 1px solid #ccc;
+				border-radius: 3px;
+			}
+
+			#designer .widgets{
+				margin: 8px;
+				padding: 8px;
+				border: 1px dashed #ccc;
 			}
 		</style>
 		<script type="text/javascript">
@@ -50,13 +74,12 @@
 	</head>
 	<body>
 		<div id="toolbox">
-			<div class="widgets"><span>标签:<span><input/></div>
-			<div class="widgets"><span>标签:<span><select></select></div>
-			<div class="widgets"><span>标签:<span><input type="radio"/></div>
-			<div class="widgets"><span>标签:<span><input type="checkbox"/></div>
-			<div class="widgets"><span>标签:<span><input/></div>
-			<div class="widgets"><span>标签:<span><img/></div>
-			<div class="widgets"><span>标签:<span><input/></div>
+			<div id="toolbox-title">组件面板</div>
+			<div class="widgets nv-item-text"><span>文本:</span><input/></div>
+			<div class="widgets nv-item-select"><span>选择框:</span><select></select></div>
+			<div class="widgets nv-item-radio"><span>单选框:</span><input type="radio"></input></div>
+			<div class="widgets nv-item-checkbox"><span>标签:</span><input type="checkbox"/></div>
+			<div class="widgets nv-item-textarea"><span>文本域:</span><textarea></textarea></div>
 		</div>
 		<div id="designer"></div>
 	</body>
