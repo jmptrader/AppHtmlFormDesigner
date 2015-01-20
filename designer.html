@@ -54,34 +54,11 @@
 				padding: 8px;
 				border: 1px dashed #ccc;
 			}
-		</style>
-		<script type="text/javascript">
-			$(function(){
-				$("#designer").sortable({
-					revert: true,
-					placeholder: "placeholder",
-					receive: function(event, ui){
-						addItem(ui.helper);
-					}
-				});
 
-				$( ".widgets").draggable({
-					connectToSortable: "#designer",
-				   	helper: "clone",
-				   	addClasses: false,
-				   	revert: "invalid"
-				});
-
-				$( "div" ).disableSelection();
-			});
-
-			function addItem(item){
-				item.css("background-color", "#f00");
-				$(item).click(function(){
-					alert('clic');
-				});
+			#designer .widgets:hover,#designer .widgets-selected{
+				background-color: #ccc;
 			}
-		</script>
+		</style>
 	</head>
 	<body>
 		<div id="toolbox">
@@ -94,17 +71,18 @@
 			<a href="#">更新</a>
 
 			<div id="toolbox-title">组件面板</div>
-			<div class="widgets nv-item-text"><span>文本:</span><input/></div>
-			<div class="widgets nv-item-select"><span>选择框:</span><select></select></div>
-			<div class="widgets nv-item-radio"><span>单选框:</span><input type="radio"></input></div>
-			<div class="widgets nv-item-checkbox"><span>标签:</span><input type="checkbox"/></div>
-			<div class="widgets nv-item-textarea"><span>文本域:</span><textarea></textarea></div>
+			<div class="widgets nv-item-text"><span class="nv-item-label">文本:</span><input/></div>
+			<div class="widgets nv-item-select"><span class="nv-item-label">选择框:</span><select></select></div>
+			<div class="widgets nv-item-radio"><span class="nv-item-label">单选框:</span><input type="radio"></input></div>
+			<div class="widgets nv-item-checkbox"><span class="nv-item-label">标签:</span><input type="checkbox"/></div>
+			<div class="widgets nv-item-textarea"><span class="nv-item-label">文本域:</span><textarea></textarea></div>
 			<div id="toolbox-title">属性面板</div>
-			<div><span>标签:</span><input/></div>
-			<div><span>模型属性:</span><select></select></div>
+			<div><span>标签:</span><input id="prop_label"/></div>
+			<div><span>必填:</span><input id="prop_required" type="checkbox"/></div>
+			<div><span>模型属性:</span><select id="prop_model_field"></select></div>
 			<div>
 				<span>分组:</span>
-				<select>
+				<select id="prop_group">
 					<option>1</option>
 					<option>2</option>
 					<option>3</option>
