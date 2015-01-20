@@ -3,6 +3,7 @@
 	<head>
 		<script type="text/javascript" src="./libs/jquery-1.8.0.min.js"></script>
 		<script type="text/javascript" src="./libs/jquery-ui-1.10.3.custom.js"></script>
+		<script type="text/javascript" src="designer.js"></script>
 		<link rel="stylesheet" type="text/css" href="./libs/jquery-ui-1.10.3.custom.min.css"/>
 		<style type="text/css">
 			html, body{
@@ -58,7 +59,10 @@
 			$(function(){
 				$("#designer").sortable({
 					revert: true,
-					placeholder: "placeholder"
+					placeholder: "placeholder",
+					receive: function(event, ui){
+						addItem(ui.helper);
+					}
 				});
 
 				$( ".widgets").draggable({
@@ -70,16 +74,47 @@
 
 				$( "div" ).disableSelection();
 			});
+
+			function addItem(item){
+				item.css("background-color", "#f00");
+				$(item).click(function(){
+					alert('clic');
+				});
+			}
 		</script>
 	</head>
 	<body>
 		<div id="toolbox">
+			<div id="toolbox-title">全局属性</div>
+			<div><span>ID:</span><span>XXXXXXXX</span></div>
+			<div><span>对应模型:</span><span>XXXXXXXX</span></div>
+			<div><span>更新者:</span><<span>XXXX</span></div>
+			<div><span>更新时间:</span><<span>XXXX</span></div>
+			<div><span>备注:</span><span>XXXX</span></div>
+			<a href="#">更新</a>
+
 			<div id="toolbox-title">组件面板</div>
 			<div class="widgets nv-item-text"><span>文本:</span><input/></div>
 			<div class="widgets nv-item-select"><span>选择框:</span><select></select></div>
 			<div class="widgets nv-item-radio"><span>单选框:</span><input type="radio"></input></div>
 			<div class="widgets nv-item-checkbox"><span>标签:</span><input type="checkbox"/></div>
 			<div class="widgets nv-item-textarea"><span>文本域:</span><textarea></textarea></div>
+			<div id="toolbox-title">属性面板</div>
+			<div><span>标签:</span><input/></div>
+			<div><span>模型属性:</span><select></select></div>
+			<div>
+				<span>分组:</span>
+				<select>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+				</select>
+			</div>
 		</div>
 		<div id="designer"></div>
 	</body>
