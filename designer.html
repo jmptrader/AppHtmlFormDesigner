@@ -55,7 +55,7 @@
 				border: 1px dashed #ccc;
 			}
 
-			#designer .widgets:hover,#designer .widgets-selected{
+			#designer .widgets:hover, #designer .widgets-selected{
 				background-color: #ccc;
 			}
 		</style>
@@ -68,7 +68,7 @@
 			<div><span>更新者:</span><<span>XXXX</span></div>
 			<div><span>更新时间:</span><<span>XXXX</span></div>
 			<div><span>备注:</span><span>XXXX</span></div>
-			<a href="#">更新</a>
+			<a href="#">编辑</a>
 
 			<div id="toolbox-title">组件面板</div>
 			<div class="widgets nv-item-text"><span class="nv-item-label">文本:</span><input/></div>
@@ -80,9 +80,16 @@
 			<div><span>标签:</span><input id="prop_label"/></div>
 			<div><span>必填:</span><input id="prop_required" type="checkbox"/></div>
 			<div><span>模型属性:</span><select id="prop_model_field"></select></div>
+			<div><span>格式:</span>
+				<select id="prop_layout">
+					<option value="1">左右</option>
+					<option value="2">上下</option>
+				</select>
+			</div>
 			<div>
 				<span>分组:</span>
 				<select id="prop_group">
+					<option>0</option>
 					<option>1</option>
 					<option>2</option>
 					<option>3</option>
